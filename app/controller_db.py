@@ -1,15 +1,13 @@
-impoot pymysql
+import pymysql
 from db import conectarMysql
 
-def obtenerUsuarios():
-    # conexion mysql
-    conexion = conectarMysql()
-    usuarios = []
-    with conexion.cursor() as cursor:
-        sql = "SELECT * FROM usuarios"
-    # consulta
-        cursor.execute(sql)
-        usuarios = cursor.fetchall()
-    # return resultados
-        return usuarios    
 
+#Contacto formulario
+def guardar_contacto(nombre, apellido, comentario, mail):
+    conexion = conectarMysql()
+    with conexion.cursor() as cursor:
+        query = "INSERT INTO contacto (nombre, apellido, comentario, mail) VALUES (%s, %s, %s, %s)"
+        cursor.execute(query, (nombre, apellido, comentario, mail))
+        conexion.commit()
+        conexion.close()
+        return "Data saved successfully!"  # Or return a success message

@@ -1,0 +1,103 @@
+ <script src="{{url_for('static', filename='css/modoclaro-oscuro.js')}}"></script>
+  <script>
+    document.getElementById('modo-dark').addEventListener('click', function () {
+      document.getElementById('estilos-oscuros').disabled = false;
+      document.getElementById('estilos-claros').disabled = true;
+      document.getElementById('modo-dark').style.display = 'none';
+      document.getElementById('modo-light').style.display = 'block';
+    });
+
+    document.getElementById('modo-light').addEventListener('click', function () {
+      document.getElementById('estilos-oscuros').disabled = true;
+      document.getElementById('estilos-claros').disabled = false;
+      document.getElementById('modo-dark').style.display = 'block';
+      document.getElementById('modo-light').style.display = 'none';
+    });
+  </script>
+
+  <script>
+    function initMap() {
+      var ubicacion = { lat: -27.470125, lng: -58.821028 };
+
+      var map = new google.maps.Map(document.getElementById('mapa'), {
+        zoom: 15,
+        center: ubicacion
+      });
+
+      var marker = new google.maps.Marker({
+        position: ubicacion,
+        map: map,
+        title: 'Ubicación'
+      });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initMap);
+  </script>
+
+  <script>
+    function validarCorreoElectronico(correo) {
+      var re = /\S+@\S+\.\S+/;
+      return re.test(correo);
+    }
+
+    function validarFormulario() {
+      var nombre = document.getElementById('nombre').value;
+      var apellido = document.getElementById('apellido').value;
+      var mensaje = document.getElementById('comentario').value;
+      var correo = document.getElementById('mail').value;
+
+      if (nombre === '' || apellido === '' || mensaje === '' || correo === '') {
+        alert('Por favor, complete todos los campos.');
+        return false;
+      }
+
+      if (!validarCorreoElectronico(correo)) {
+        alert('Por favor, ingrese un correo electrónico válido.');
+        return false;
+      }
+
+      return true;
+    }
+
+    document.getElementById('enviarFormulario').addEventListener('click', function () {
+      if (!validarFormulario()) {
+    event.preventDefault();  // Prevent form submission
+  } else {
+    document.getElementById('mensajeExito').style.display = 'block';
+    // Optional: Remove the line disabling the button to allow multiple submissions
+    // this.disabled = true; 
+  }
+});
+  </script>
+
+  <script>
+    function limpiarFormulario() {
+      document.getElementById('Nombre').value = '';
+      document.getElementById('Apellido').value = '';
+      document.getElementById('Comentario').value = '';
+      document.getElementById('mail').value = '';
+      document.getElementById('archivo').value = '';
+    }
+
+    document.getElementById('limpiarFormulario').addEventListener('click', function () {
+      limpiarFormulario();
+    });
+  </script>
+
+  <script src="{{url_for('static', filename='css/node_modules/@popperjs/core/dist/umd/popper.min.js')}}"> </script>
+  <script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+  </script>
+
+  <script>
+    function changeTextColor(element) {
+      var links = document.querySelectorAll('.nav-link');
+      links.forEach(function (link) {
+        link.classList.remove('active1');
+      });
+      element.classList.add('active1');
+    }
+  </script>

@@ -1,13 +1,28 @@
-# instalar pymysql -> pip install pymysql
-# importar pymysql / SQLachemy / dbmysql
+import mysql.connector
 
-import pymysql
-
-#conexion base de datos
+# Conexion a la base de datos
 def conectarMysql():
-    host="localhost"
-    user="root"
-    password=""
-    db="argentur"
-    return pymysql.connect(host=host,user=user,password=password,database=db)
+    conexion = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='',
+        database='argentur'
+    )
+    return conexion
 
+# Example of using the connection
+try:
+    conn = conectarMysql()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM your_table")
+    results = cursor.fetchall()
+    
+    for row in results:
+        print(row)
+
+except mysql.connector.Error as err:
+    print(f"Error: {err}")
+finally:
+    if conn.is_connected():
+        cursor.close()
+        conn.close()

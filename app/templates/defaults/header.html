@@ -1,0 +1,42 @@
+<header></header>
+<nav class="navbar navbar-expand-lg sticky-top navbar-opaque">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="{{url_for('static', filename='image/carrusel/arg_pol_tur.png')}}" alt="Bootstrap" width="30" height="24">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#" onclick="changeTextColor(this)">ArgentinaTur</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="changeTextColor(this)">Lugares a viajar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./login/login.html" onclick="changeTextColor(this)">Login/Registro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./login/sidebarmenu-admin.html" onclick="changeTextColor(this)">Menu posterior al login admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contacto" onclick="changeTextColor(this)">Contacto</a>
+          </li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Texto a buscar" aria-label="">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+        <button class="btn btn-dark" id="modo-dark" style="display:none;">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="btn btn-light" id="modo-light">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
