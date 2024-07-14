@@ -1,0 +1,31 @@
+body {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto claro */
+}
+
+.navbar-opaque {
+    background-color: rgba(102, 94, 94, 0.8); /* Ajusta los valores RGBA según tus necesidades */
+    color: white;
+  }
+
+/* Estilos para la navbar en modo oscuro */
+.navbar-dark, .navbar-nav,.nav-link {
+    color: #fff; /* Color de texto en modo oscuro */
+
+}
+
+.navbar-dark, .navbar-brand {
+    color: #fff; /* Color de texto para la marca en modo oscuro */
+}
+
+/* Estilos para el footer en modo oscuro */
+.footer {
+    background-color: #343a40; /* Color de fondo en modo oscuro */
+    color: #fff; /* Color de texto en modo oscuro */
+}
+
+/* Estilos para la clase content en modo oscuro */
+.content {
+    color: #fff; /* Color de texto en modo oscuro */
+    background-color: #333; /* Fondo en modo oscuro */
+}

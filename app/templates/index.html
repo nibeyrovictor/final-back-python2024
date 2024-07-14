@@ -1,11 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/node_modules/bootstrap/dist/css/bootstrap.min.css')}}">
+  <script src="{{url_for('static', filename='css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')}}"> </script>
+  <link rel="icon" href="{{url_for('static', filename='image/carrusel/arg_pol_tur.png')}}" type="image/x-icon">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/flecha-ir-arriba.css')}}">
+  <script src="{{url_for('static', filename='css/flecha-ir-arriba.js')}}"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/claro.css')}}" id="estilos-claros">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/oscuro.css')}}" id="estilos-oscuros">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/9007683047.js" crossorigin="anonymous"></script>
+  <title>Grupo 16</title>
+
 </head>
+
 <body>
-    
+  <!--barra superior-->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-opaque">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="{{url_for('static', filename='image/carrusel/arg_pol_tur.png')}}" alt="Bootstrap" width="30" height="24">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#" onclick="changeTextColor(this)">ArgentinaTur</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="changeTextColor(this)">Lugares a viajar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./login/login.html" onclick="changeTextColor(this)">Login/Registro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./login/sidebarmenu-admin.html" onclick="changeTextColor(this)">Menu posterior al login admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#formulario" onclick="changeTextColor(this)">Contacto</a>
+          </li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Texto a buscar" aria-label="">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+        <button class="btn btn-dark" id="modo-dark" style="display:none;">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="btn btn-light" id="modo-light">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carrusel -->
+  <section id="slider">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{url_for('static', filename='image/carrusel/amanecer.jpg')}}" class="d-block w-100" alt="...">
+          <div class="carousel-caption ">
+            <h5>Admirando el amanecer</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{{url_for('static', filename='image/carrusel/costa-flor.jpg')}}" class="d-block w-100" alt="...">
+          <div class="carousel-caption ">
+            <h5>Flor de época</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{{url_for('static', filename='image/carrusel/saltos-mocona.jpg')}}" class="d-block w-100" alt="...">
+          <div class="carousel-caption ">
+            <h5>La emoción de un buen recorrido</h5>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!--Formulario -->
+  <section id="formulario" class="content formulario py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2 class="mb-4 text-center"><span class="smaller-text">Modo de contacto</span></h2>
+          <form action="" method="post" enctype="multipart/form-data">
+            <div class="row g-3 mt-4">
+              <div class="col-md-6">
+                <input class="form-control" type="text" name="Nombre" id="Nombre" placeholder="Nombre">
+              </div>
+              <div class="col-md-6">
+                <input class="form-control" type="text" name="Apellido" id="Apellido" placeholder="Apellido">
+              </div>
+            </div>
+            <div class="row g-3 mt-4">
+              <div class="col-md-12">
+                <input class="form-control" type="text" name="Mensaje" id="Comentario" placeholder="Mensaje">
+              </div>
+            </div>
+            <div class="row g-3 mt-4">
+              <div class="col-md-12">
+                <input class="form-control" type="email" name="mail" id="mail" placeholder="Correo">
+              </div>
+            </div>
+            <div class="row g-3 mt-4">
+              <div class="col-md-12">
+                <input class="form-control" type="file" name="archivo" id="archivo">
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <p class="text-start mb-0">Recuerda incluir datos de contacto como número de celular o cualquier otro
+                  medio que considere conveniente</p>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="d-flex gap-2 col-md-12 text-center">
+                <input class="btn btn-success btn-lg btn-block" type="button" value="Enviar" id="enviarFormulario">
+                <div class="d-flex justify-content-center align-items-center">
+                  <input class="btn btn-danger btn-lg btn-block" type="button" value="Limpiar" id="limpiarFormulario">
+                  <a href="#" title="Botón limpiar" data-bs-toggle="popover" data-bs-trigger="hover"
+                    data-bs-content="Botón para limpiar lo que se haya cargado en el formulario"
+                    class="lni lni-question-circle"></a>
+                </div>
+              </div>
+              <div id="mensajeExito" style="display: none;">
+                <p class="text-success">¡El formulario se ha enviado con éxito!</p>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="d-flex justify-content-center col-md-6 mt-2 ">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14174.23879872211!2d-55.89912636680908!3d-27.35823057753666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1696560902671!5m2!1ses-419!2sar"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flecha hacia arriba -->
+  <a href="#" class="ir-arriba fa-solid fa-arrow-up" id="flecha-arriba" onclick="irArriba()"></a>
+
+  <!-- Footer -->
+  <footer class="footer py-3">
+    <div class="container">
+      <nav class="text-center">
+        <ul class="list-inline justify-content-center mb-0">
+          <li class="mx-3 d-inline">Preguntas Frecuentes</li>
+          <li class="mx-3 d-inline">Contáctanos</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="d-flex justify-content-center row align-items-center">
+      <div class="d-flex justify-content-center col-md-6">
+        <ul class="list-inline justify-content-center mb-0">
+          <li class="mx-3 d-inline">
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="lni lni-facebook-oval"></i>
+            </a>
+          </li>
+          <li class="mx-3 d-inline">
+            <a href="https://twitter.com/" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="mx-3 d-inline">
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="copyright text-center">Copyright © 2024 Equipo N° 16</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{url_for('static', filename='css/modoclaro-oscuro.js')}}"></script>
+  <script>
+    document.getElementById('modo-dark').addEventListener('click', function () {
+      document.getElementById('estilos-oscuros').disabled = false;
+      document.getElementById('estilos-claros').disabled = true;
+      document.getElementById('modo-dark').style.display = 'none';
+      document.getElementById('modo-light').style.display = 'block';
+    });
+
+    document.getElementById('modo-light').addEventListener('click', function () {
+      document.getElementById('estilos-oscuros').disabled = true;
+      document.getElementById('estilos-claros').disabled = false;
+      document.getElementById('modo-dark').style.display = 'block';
+      document.getElementById('modo-light').style.display = 'none';
+    });
+  </script>
+
+  <script>
+    function initMap() {
+      var ubicacion = { lat: -27.470125, lng: -58.821028 };
+
+      var map = new google.maps.Map(document.getElementById('mapa'), {
+        zoom: 15,
+        center: ubicacion
+      });
+
+      var marker = new google.maps.Marker({
+        position: ubicacion,
+        map: map,
+        title: 'Ubicación'
+      });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initMap);
+  </script>
+
+  <script>
+    function validarCorreoElectronico(correo) {
+      var re = /\S+@\S+\.\S+/;
+      return re.test(correo);
+    }
+
+    function validarFormulario() {
+      var nombre = document.getElementById('Nombre').value;
+      var apellido = document.getElementById('Apellido').value;
+      var mensaje = document.getElementById('Comentario').value;
+      var correo = document.getElementById('mail').value;
+
+      if (nombre === '' || apellido === '' || mensaje === '' || correo === '') {
+        alert('Por favor, complete todos los campos.');
+        return false;
+      }
+
+      if (!validarCorreoElectronico(correo)) {
+        alert('Por favor, ingrese un correo electrónico válido.');
+        return false;
+      }
+
+      return true;
+    }
+
+    document.getElementById('enviarFormulario').addEventListener('click', function () {
+      if (validarFormulario()) {
+        document.getElementById('mensajeExito').style.display = 'block';
+        this.disabled = true;
+      }
+    });
+  </script>
+
+  <script>
+    function limpiarFormulario() {
+      document.getElementById('Nombre').value = '';
+      document.getElementById('Apellido').value = '';
+      document.getElementById('Comentario').value = '';
+      document.getElementById('mail').value = '';
+      document.getElementById('archivo').value = '';
+    }
+
+    document.getElementById('limpiarFormulario').addEventListener('click', function () {
+      limpiarFormulario();
+    });
+  </script>
+
+  <script src="{{url_for('static', filename='css/node_modules/@popperjs/core/dist/umd/popper.min.js')}}"> </script>
+  <script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+  </script>
+
+  <script>
+    function changeTextColor(element) {
+      var links = document.querySelectorAll('.nav-link');
+      links.forEach(function (link) {
+        link.classList.remove('active1');
+      });
+      element.classList.add('active1');
+    }
+  </script>
+
 </body>
+
 </html>

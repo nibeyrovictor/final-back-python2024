@@ -1,0 +1,39 @@
+    .ir-arriba {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      /* Tamaño del círculo */
+      height: 50px;
+      line-height: 50px;  
+          /* Tamaño del círculo */
+      border-radius: 50%;
+      background-color: #00336d;
+      /* Color de fondo del botón */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+        text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+      display: inline-block; /* Hace que el círculo se comporte como un elemento en línea */
+    }
+
+      /* Tamaño del ícono */
+    .fa-arrow-up {
+      color: #ffffff;
+      font-size: 50px;
+
+    }
+
+    .ir-arriba.mostrar {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .ir-arriba:hover {
+      background-color: #3995ff;
+    }

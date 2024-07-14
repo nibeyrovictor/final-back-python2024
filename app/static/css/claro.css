@@ -1,0 +1,34 @@
+/* Estilos para el modo claro */
+body {
+    background-color: #fff; /* Fondo blanco */
+    color: #333; /* Texto oscuro */
+}
+
+/* Estilos para la navbar en modo claro */
+.navbar-dark .navbar-nav .nav-link {
+    background-color: #f8f9fa; /* Color de fondo en modo claro */
+
+}
+
+.navbar-dark .navbar-brand {
+    color: #5e5e5ec4; /* Color de texto para la marca en modo claro */
+    background-color: #fff; /* Fondo blanco */
+}
+
+/* Estilos para el footer en modo claro */
+.footer {
+    background-color: #f8f9fa; /* Color de fondo en modo claro */
+    color: #333; /* Color de texto en modo claro */
+}
+
+/* Estilo de navbar-collapse en modo claro */
+.navbar-toggler-icon {
+    color: white; /* Fondo blanco */
+
+}
+
+/* Estilos para la clase content en modo claro*/
+.content {
+    color: #050202; /* Color de texto en modo claro */
+    background-color: #f5ebeb; /* Fondo en modo claro */
+}
